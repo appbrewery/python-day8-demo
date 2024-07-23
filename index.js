@@ -79,6 +79,32 @@ const alphabet = [
   "x",
   "y",
   "z",
+  "a",
+  "b",
+  "c",
+  "d",
+  "e",
+  "f",
+  "g",
+  "h",
+  "i",
+  "j",
+  "k",
+  "l",
+  "m",
+  "n",
+  "o",
+  "p",
+  "q",
+  "r",
+  "s",
+  "t",
+  "u",
+  "v",
+  "w",
+  "x",
+  "y",
+  "z",
 ];
 
 //Click Run
@@ -174,7 +200,7 @@ function NewLine(text, isPrompt) {
 function caesar(cipher_direction, start_text, shift_amount) {
   let end_text = "";
   if (cipher_direction == "decode") {
-    shift_amount *= -1;
+    shift_amount = shift_amount * -1 + 26;
   }
   for (char in start_text) {
     if (alphabet.includes(start_text[char])) {
