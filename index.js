@@ -85,13 +85,13 @@ const alphabet = [
 $(document).ready(function () {
   $("#run-button").click(function () {
     $("#Content").empty();
+    NewLine(logo, false);
     restart();
   });
 });
 
 function restart() {
   inputValues = [];
-  NewLine(logo, false);
   NewLine("Type 'encode' to encrypt, type 'decode' to decrypt:", true);
 }
 
@@ -111,7 +111,7 @@ $(document).on("keydown", function (e) {
         ),
         false
       );
-      NewLine(inputPrompts[2], true);
+      // NewLine(inputPrompts[2], true);
     }
 
     if (inputValues.length > inputPrompts.length) {
@@ -125,7 +125,7 @@ $(document).on("keydown", function (e) {
     }
 
     $(".console-carrot").remove();
-    if (inputValues.length < 3) {
+    if (inputValues.length <= 3) {
       NewLine(inputPrompts[inputValues.length - 1], true);
     }
   }
